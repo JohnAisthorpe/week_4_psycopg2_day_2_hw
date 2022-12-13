@@ -2,8 +2,8 @@ from db.run_sql import run_sql
 from models.album import Album
 
 def save(album):
-    sql = "INSERT INTO albums (album_name, artist_name) VALUES (%s, %s) RETURNING *"
-    values = [album.album_name, album.artist_name]
+    sql = "INSERT INTO albums (album_name, artist_id) VALUES (%s) RETURNING *"
+    values = [album.album_name, album.artist.id]
 
     results = run_sql(sql, values)
 
@@ -23,7 +23,7 @@ def select(id):
 
     if len(results) > 0:
         album_data = results[0]
-        album = Album(album_data['album_name'], album_data['artist_name'])
+        album = Album(album_data['album_name'], album_data['artist'])
 
         return album
 
