@@ -15,7 +15,7 @@ album_1 = Album("Midnights", artist_1)
 
 album_repository.save(album_1)
 
-artist_repository.select(1)
+# artist_repository.select(1)
 
 
 

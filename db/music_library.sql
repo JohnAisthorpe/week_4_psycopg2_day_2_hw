@@ -12,11 +12,12 @@ CREATE TABLE albums (
     artist_id INT NOT NULL REFERENCES artists(id) ON DELETE CASCADE
 );
 
-INSERT INTO albums (album_name, id)
-VALUES ('Marry Me', 1);
-
 INSERT INTO artists (name)
 VALUES ('Olly Murs');
+
+INSERT INTO albums (album_name, artist_id)
+VALUES ('Marry Me', 1);
+
 
 
 

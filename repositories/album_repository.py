@@ -2,7 +2,7 @@ from db.run_sql import run_sql
 from models.album import Album
 
 def save(album):
-    sql = "INSERT INTO albums (album_name, artist_id) VALUES (%s) RETURNING *"
+    sql = "INSERT INTO albums (album_name, artist_id) VALUES (%s, %s) RETURNING *"
     values = [album.album_name, album.artist.id]
 
     results = run_sql(sql, values)
