@@ -9,7 +9,7 @@ CREATE TABLE artists (
 CREATE TABLE albums (
     id SERIAL PRIMARY KEY, 
     album_name VARCHAR(255),
-    artist_id INT REFERENCES artists(id)
+    artist_id INT NOT NULL REFERENCES artists(id) ON DELETE CASCADE
 );
 
 INSERT INTO albums (album_name, id)
